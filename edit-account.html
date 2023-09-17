@@ -39,17 +39,15 @@
         place-items: center;
       }
 
+      .title {
+        font-size: var(--lg);
+        margin: 40px 0;
+      }
+
       .form-container {
         display: grid;
         grid-template-rows: auto 1fr auto;
         width: 300px;
-      }
-
-      .logo {
-        width: 150px;
-        margin-bottom: 50px;
-        justify-self: center;
-        display: none;
       }
 
       .form {
@@ -63,28 +61,13 @@
         margin: 0 0 4px 0;
       }
 
-      .input {
-        background-color: var(--text-input-field);
-        border: none;
-        border-radius: 8px;
+      .value {
         height: 30px;
+        color: var(--very-light-pink);
         font-size: var(--md);
-        padding: 6px;
-        width: 96%;
-        margin: 10px 0;
-      }
-
-      .primary-button {
-        background: var(--hospital-green);
-        border-radius: 8px;
-        border:none;
-        color: var(--white);
-        padding: 10px 0;
+        padding: 6px 0;
         width: 100%;
-        cursor: pointer;
-        font-size: var(--md);
-        font-weight: bold;
-        height: 50px;
+        margin: 10px 0;
       }
 
       .secondary-button{
@@ -115,14 +98,14 @@
       }
 
       @media (max-width: 640px){
-        .logo{
-            display: block;
+        
+        .form-container {
+            height: 100%;
         }
 
-        .signup-button {
-            position: absolute;
-            bottom: 30px;
-            width: 300px; /*width del padre contendor*/
+        .form {
+            justify-content: space-between;
+            padding: 0 0 30px 0;
         }
       }
     </style>
@@ -130,37 +113,21 @@
   <body>
     <div class="login">
       <div class="form-container">
-        <img
-          src="./Logos/logo_yard_sale.svg"
-          alt=""
-          class="logo"
-        />
+        <h1 class="title">My account</h1>
+
         <form action="" class="form">
-          <label for="password" class="label">Email adress</label>
-          <input
-            type="text"
-            name="password"
-            id="password"
-            placeholder="example@gmail.com"
-            class="input input-password"
-          />
+          <div>
+            <label for="password" class="label">Name</label>
+            <p class="value">Juan Nada</p>
 
-          <label for="password" class="label">Password </label>
-          <input
-            type="password"
-            name="password"
-            id="new-password"
-            placeholder="**********"
-            class="input input-password"
-          />
+            <label for="password" class="label">Email adress</label>
+            <p class="value">juannada@gmail.com</p>
 
-          <button class="primary-button login-button">Log in</button>
+            <label for="password" class="label">Password </label>
+            <p class="value">*********</p>
+          </div>
 
-          <a href="" class="primary-text">Forgot my password</a>
-        </form>
-
-        <form action="">
-          <button class="secondary-button signup-button">Sign up</button>
+          <button class="secondary-button signup-button">Edit</button>
         </form>
       </div>
     </div>
