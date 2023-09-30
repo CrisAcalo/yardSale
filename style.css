@@ -10,6 +10,10 @@
     --lg: 18px:
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: "Quicksand", sans-serif;
     margin: 0;
@@ -18,11 +22,14 @@ body {
 /* NAV BAR */
 
 nav {
-    position: relative;
+    position: fixed;
+    top:0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 0 24px;
     box-shadow: 0px 1px 3px var(--very-light-pink);
+    background-color: var(--white);
     z-index: 100;
 }
 
@@ -93,6 +100,10 @@ nav {
 
 .navbar-shopping-cart {
     position: relative;
+}
+
+.navbar-shopping-cart:hover {
+    cursor: pointer;
 }
 
 .navbar-shopping-cart div {
@@ -173,10 +184,10 @@ nav {
 
 .mobile-menu {
     position: absolute;
-    top: 61px;
+    top: 60px;
     padding: 24px;
     width: 70%;
-    min-height: calc(100vh - 109px);
+    min-height: calc(100vh - 60px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -188,11 +199,17 @@ nav {
     left: 0;
     opacity: 1;
     transition: all .3s;
+    overflow-y: auto;  /* permite el desplazamiento vertical cuando sea necesario */
 }
 
 .inactive-mobile_menu {
     left: -100%;
     opacity: 0;
+}
+
+.no-scroll {
+    overflow: hidden;
+    height: 100%;
 }
 
 .mobile-menu a {
@@ -252,7 +269,8 @@ nav {
     background-color: var(--white);
     border-radius: 8px 0 0 8px;
 
-    position: absolute;
+    position: fixed;
+    top:60px;
     right: 0;
     opacity: 1;
     visibility: visible;
@@ -388,6 +406,10 @@ nav {
 }
 
 /* PRINCIPAL CONTENT */
+
+.main-container{ 
+    margin-top:60px;
+}
 
 .cards-container {
     padding: 30px 0;

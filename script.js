@@ -5,6 +5,7 @@ class Product {
     this.image = image;
   }
 }
+const bodyElement = document.body;
 
 const menuEmail = document.querySelector(".navbar-email");
 const desktopMenu = document.querySelector(".desktop-menu");
@@ -30,22 +31,30 @@ function toogleSubMenuDesktop() {
 }
 
 function toogleMobileMenu() {
-  //lo contiene, se remueve, retorna falso, se activa
-  if (
-    !mobileMenu.classList.toggle("inactive-mobile_menu") &&
-    !shoppingCartContainer.classList.contains("inactive-shopping-cart")
-  ) {
-    shoppingCartContainer.classList.add("inactive-shopping-cart");
+  // Si el menú móvil se activa (es decir, se remueve la clase "inactive-mobile_menu")
+  if (!mobileMenu.classList.toggle("inactive-mobile_menu")) {
+    // Bloquea el scroll del body
+    bodyElement.classList.add("no-scroll");
+    // Si el carrito de compras está activo, lo desactiva
+    if (!shoppingCartContainer.classList.contains("inactive-shopping-cart")) {
+      shoppingCartContainer.classList.add("inactive-shopping-cart");
+    }
+  } else {
+    // Si el menú móvil se desactiva, desbloquea el scroll del body
+    bodyElement.classList.remove("no-scroll");
   }
 }
 
 function toogleShoppingCart() {
-  //lo contiene, se remueve, retorna falso, se activa
-  if (
-    !shoppingCartContainer.classList.toggle("inactive-shopping-cart") &&
-    !mobileMenu.classList.contains("inactive-mobile_menu")
-  ) {
-    mobileMenu.classList.add("inactive-mobile_menu");
+  // Si el carrito de compras se activa (es decir, se remueve la clase "inactive-shopping-cart")
+  if (!shoppingCartContainer.classList.toggle("inactive-shopping-cart")) {
+    // Si el menú móvil está activo, lo desactiva
+    if (!mobileMenu.classList.contains("inactive-mobile_menu")) {
+      mobileMenu.classList.add("inactive-mobile_menu");
+    }
+  } else {
+    // Si el carrito de compras se desactiva, desbloquea el scroll del body
+    bodyElement.classList.remove("no-scroll");
   }
 }
 
