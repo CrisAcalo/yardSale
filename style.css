@@ -23,7 +23,7 @@ body {
 
 nav {
     position: fixed;
-    top:0;
+    top: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -182,6 +182,18 @@ nav {
     text-align: center;
 }
 
+.mobile-menu_inactive-background {
+    background-color: rgba(0, 0, 0, 0.16);
+    backdrop-filter: blur(2px);
+    width: 30%;
+    height: calc(100vh - 60px);
+    position: absolute;
+    top: 60px;
+    left: 70%;
+    z-index: 80;
+    transition: all .3s;
+}
+
 .mobile-menu {
     position: absolute;
     top: 60px;
@@ -196,10 +208,12 @@ nav {
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
 
+    z-index: 100;
     left: 0;
     opacity: 1;
     transition: all .3s;
-    overflow-y: auto;  /* permite el desplazamiento vertical cuando sea necesario */
+    overflow-y: auto;
+    /* permite el desplazamiento vertical cuando sea necesario */
 }
 
 .inactive-mobile_menu {
@@ -270,7 +284,8 @@ nav {
     border-radius: 8px 0 0 8px;
 
     position: fixed;
-    top:60px;
+    z-index: 100;
+    top: 60px;
     right: 0;
     opacity: 1;
     visibility: visible;
@@ -297,31 +312,18 @@ nav {
     align-items: center;
 }
 
-.primary-button {
-    background: var(--hospital-green);
-    border-radius: 8px;
-    border: none;
-    color: var(--white);
-    padding: 10px 0;
-    width: 100%;
-    cursor: pointer;
-    font-size: var(--md);
-    font-weight: bold;
-    height: 50px;
-}
-
 .add-to-cart-button {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.title-container {
+.title_shopping-cart_container {
     display: flex;
     padding: 0 24px;
 }
 
-.title-container img {
+.title_shopping-cart_container img {
     margin-right: 24px;
     transform: rotate(180deg);
 }
@@ -407,8 +409,8 @@ nav {
 
 /* PRINCIPAL CONTENT */
 
-.main-container{ 
-    margin-top:60px;
+.main-container {
+    margin-top: 60px;
 }
 
 .cards-container {
@@ -453,6 +455,114 @@ nav {
     margin: 0;
 }
 
+/* DETALLE DE PRODUCTO */
+
+.product-detail {
+    z-index: 50;
+    width: 360px;
+    height: 100vh;
+    padding: 0;
+    position: fixed;
+    top: 60px;
+    right: 0;
+    box-shadow: -1px 0px 3px var(--very-light-pink);
+    background-color: var(--white);
+    border-radius: 8px 20px 20px 8px;
+    transition: all .3s;
+}
+
+.product-detail-close {
+    background-color: var(--white);
+    border-radius: 50%;
+    border: solid 1px var(--very-light-pink);
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-detail-close:hover {
+    cursor: pointer;
+}
+
+.product-detail>img:nth-child(2) {
+    width: 100%;
+    max-height: 360px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.product-info_detail-aside {
+    margin: 24px 24px 0 24px;
+}
+
+.product-info_detail-aside p:nth-child(1) {
+    font-weight: 700;
+    font-size: var(--lg);
+    margin: 8px 0 4px 0;
+}
+
+.product-info_detail-aside p:nth-child(2) {
+    font-weight: 500;
+    font-size: var(--md);
+    color: var(--very-light-pink);
+    margin: 0 0 36px 0;
+}
+
+.product-info_detail-aside p:nth-child(3) {
+    font-weight: 400;
+    font-size: var(--sm);
+    color: var(--very-light-pink);
+    margin: 0 0 36px 0;
+}
+
+.primary-button {
+    background: var(--hospital-green);
+    border-radius: 8px;
+    border: none;
+    color: var(--white);
+    padding: 10px 0;
+    width: 100%;
+    cursor: pointer;
+    font-size: var(--md);
+    font-weight: bold;
+    height: 50px;
+}
+
+.add-to-cart-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ESTILOS DE LA BARRA DE SCROLL */
+
+/* Scroll bar */
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    background-color: var(--hospital-green);
+}
+
+
+/* @media (max-width: 360px) {
+    .product-detail {
+        width: 100%;
+    }
+}
+ */
+
 @media (max-width: 840px) {
 
     .navbar-email,
@@ -489,6 +599,10 @@ nav {
     .product-img {
         width: 140px;
         height: 140px;
+    }
+
+    .product-detail {
+        width: 100%;
     }
 }
 
