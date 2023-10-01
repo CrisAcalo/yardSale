@@ -192,6 +192,55 @@ products.push(
     "https://iphoneroot.com/wp-content/uploads/2017/06/mbp-2017.-wwdcjpg.jpg"
   )
 );
+products.push(
+  new Product(
+    "MotorBike",
+    "12.000",
+    "https://www.atyourbusiness.com/blog/wp-content/uploads/2020/06/motorcyclefact.jpg"
+  )
+);
+products.push(
+  new Product(
+    "Bike",
+    "500",
+    "https://i5.walmartimages.com/asr/205ce438-cf8c-4ae9-8903-56fe21ce3f59_1.0cbb20f693c2dcb22fe6d30ddcbc306e.jpeg"
+  )
+);
+products.push(
+  new Product(
+    "Computer",
+    "1.500",
+    "https://iphoneroot.com/wp-content/uploads/2017/06/mbp-2017.-wwdcjpg.jpg"
+  )
+);
+products.push(
+  new Product(
+    "MotorBike",
+    "12.000",
+    "https://www.atyourbusiness.com/blog/wp-content/uploads/2020/06/motorcyclefact.jpg"
+  )
+);
+products.push(
+  new Product(
+    "Bike",
+    "500",
+    "https://i5.walmartimages.com/asr/205ce438-cf8c-4ae9-8903-56fe21ce3f59_1.0cbb20f693c2dcb22fe6d30ddcbc306e.jpeg"
+  )
+);
+products.push(
+  new Product(
+    "Computer",
+    "1.500",
+    "https://iphoneroot.com/wp-content/uploads/2017/06/mbp-2017.-wwdcjpg.jpg"
+  )
+);
+products.push(
+  new Product(
+    "MotorBike",
+    "12.000",
+    "https://www.atyourbusiness.com/blog/wp-content/uploads/2020/06/motorcyclefact.jpg"
+  )
+);
 
 function renderProducts(arr) {
   for (product of arr) {

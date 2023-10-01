@@ -284,7 +284,7 @@ nav {
     border-radius: 8px 0 0 8px;
 
     position: fixed;
-    z-index: 100;
+    z-index: 80;
     top: 60px;
     right: 0;
     opacity: 1;
@@ -423,6 +423,12 @@ nav {
 
 .product-card {
     width: 240px;
+    background-color: var(--white);
+    transition: all .2s;
+}
+
+.product-card:hover {
+    transform: scale(1.04);
 }
 
 .product-img {
